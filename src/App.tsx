@@ -14,7 +14,7 @@ function App() {
           <Route index element={IsLogged(<HomePage />)} />
           
           {/* Attrape con */}
-          <Route path='/login' element={<LoginPage />} />
+          <Route path='/Login' element={<LoginPage />} />
 
           <Route path='*' element={IsLogged(<Error404/>)} />
         </Routes>
@@ -24,7 +24,7 @@ function App() {
 }
 
 function IsLogged(components: ReactNode) {
-  return sessionStorage.getItem("session") ? components : <RedirectTo path='/login' />;
+  return sessionStorage.getItem("session") ? components : <RedirectTo path='/Login' />;
 }
 
 export default App
