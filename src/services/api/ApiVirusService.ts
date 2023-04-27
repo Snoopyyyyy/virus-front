@@ -4,13 +4,25 @@ import axios from '../CustomAxios';
 
 export default class ApiVirusService implements IVirusService {
     getAll(): Promise<Virus[]> {
-        return axios.get(`/virus`);
+        return new Promise((resolve, reject) => {
+            axios.get<{data: Virus[]}>(`/virus`).then(data => {
+                resolve(data.data)
+            }).catch(reject);
+        });
     }
     getByType(type: string): Promise<Virus[]> {
-        return axios.get(`/virus/type/${type}`);
+        return new Promise((resolve, reject) => {
+            axios.get<{data: Virus[]}>(`/virus/type/${type}`).then(data => {
+                resolve(data.data)
+            }).catch(reject);
+        });
     }
     getById(id: number): Promise<Virus> {
-        return axios.get(`/virus/${id}`);
+        return new Promise((resolve, reject) => {
+            axios.get<{data: Virus}>(`/virus/${id}`).then(data => {
+                resolve(data.data)
+            }).catch(reject);
+        });
     }
     create(virus: Virus): Promise<Virus> {
         return axios.post(`/virus`, JSON.stringify(virus));

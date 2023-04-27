@@ -19,5 +19,6 @@ html, body, #root {
 
 body {
     --primary: #4DF;
+    --primary-dark: rgb(45, 146, 168);
     --accent: #D48;
 }

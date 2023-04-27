@@ -9,7 +9,6 @@ function Header({  }) {
     <nav className='navbar'>
       <div className='navbar-section'>
         <NavLink to={'/'} className={({ isActive }) => `navbar-item ${isActive ? 'active' : ''}`}>Dashboard</NavLink>
-        <NavLink to={'/virus'} className={({ isActive }) => `navbar-item ${isActive ? 'active' : ''}`}>Virus</NavLink>
       </div>
 
       <div className='navbar-section'>

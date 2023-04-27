@@ -23,8 +23,9 @@ function LoginPage() {
         setFetching(false);
       });
     } else {
-      authService.login(email, password).then(token => {
-        sessionStorage.setItem("session", token);
+      authService.login(email, password).then(data => {
+        console.log(data)
+        sessionStorage.setItem("session", data.token);
         navigate("/");
       }).catch(err => {
         console.error(err)
