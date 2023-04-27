@@ -1,14 +1,14 @@
 import { IAuthService } from '../cores/IAuthService';
+import axios from '../CustomAxios';
 
 export default class ApiAuthService implements IAuthService {
-    register(email: string): void {
-        throw new Error('Method not implemented.');
+    fakeLogin(email: string): Promise<void> {
+        return axios.post(`/login_fake`, { email });
     }
-    login(username: string, password: string): Promise<string> {
-        throw new Error('Method not implemented.');
+    async login(username: string, password: string): Promise<string> {
+        return (await axios.put<{token: string}>(`/login_check`, { username, password })).token;
     }
     logout(): void {
-        throw new Error('Method not implemented.');
+        sessionStorage.removeItem("session")
     }
-
 }
