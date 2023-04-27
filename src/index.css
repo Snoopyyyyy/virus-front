@@ -16,3 +16,8 @@ html, body, #root {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+body {
+    --primary: #4DF;
+    --accent: #D48;
+}

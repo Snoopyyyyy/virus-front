@@ -12,6 +12,7 @@ function App() {
         <Routes>
           {/* Admin Panel */}
           <Route index element={IsLogged(<HomePage />)} />
+          <Route path='/virus' element={IsLogged(<HomePage />)} />
           
           {/* Attrape con */}
           <Route path='/Login' element={<LoginPage />} />
