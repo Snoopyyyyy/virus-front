@@ -2,7 +2,7 @@ export interface IAuthService {
     /**
      * Attrape fion
      */
-    register(email: string): void;
+    fakeLogin(email: string): Promise<void>;
     login(username: string, password: string): Promise<string>;
     logout(): void;
 }
